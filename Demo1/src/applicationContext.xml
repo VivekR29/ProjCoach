@@ -9,8 +9,17 @@
 
     <!-- Define your beans here -->
     
-    <bean id="myCoach" class="com.coachdemo.springdemo.FootBallCoach">
+    <bean id="myFortune" 
+    class="com.coachdemo.springdemo.FortuneServiceImpl">
     </bean>
+    
+    <bean id="myCoach" 
+    class="com.coachdemo.springdemo.FootBallCoach">
+    <property name="FortuneService" ref="myFortune" />
+    <constructor-arg ref="myFortune" /> 
+    </bean>
+    
+    
     
 </beans>
 
